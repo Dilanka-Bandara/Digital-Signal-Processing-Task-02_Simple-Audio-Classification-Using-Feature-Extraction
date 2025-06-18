@@ -1,9 +1,8 @@
 function [ambulance_spectra, firetruck_spectra, fs] = analyze_frequency_content(ambulance_files, firetruck_files)
-    nfft = 2048; % Fixed FFT length for all files
+    nfft = 2048; % Fixed FFT length
     ambulance_spectra = [];
     firetruck_spectra = [];
     fs = [];
-    % Analyze ambulance files
     for i = 1:length(ambulance_files)
         [audioIn, fs_] = audioread(ambulance_files(i).fullpath);
         if size(audioIn, 2) > 1
@@ -19,7 +18,6 @@ function [ambulance_spectra, firetruck_spectra, fs] = analyze_frequency_content(
             ambulance_spectra = [ambulance_spectra, psd];
         end
     end
-    % Analyze firetruck files
     for i = 1:length(firetruck_files)
         [audioIn, fs_] = audioread(firetruck_files(i).fullpath);
         if size(audioIn, 2) > 1

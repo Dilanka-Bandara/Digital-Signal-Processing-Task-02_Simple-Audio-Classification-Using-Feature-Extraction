@@ -1,2 +1,0 @@
-Emergency Vehicle Classification Results
-File Name,Energy Ratio,Prediction,Confidence
